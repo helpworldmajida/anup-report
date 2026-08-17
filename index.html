@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANUP REPORT | VB-G RAM G</title>
+<meta name="description" content="ANUP REPORT - Quick access to VB-G RAM G MIS reports and official government links.">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f7fb;
+  color:#172033;
+  line-height:1.45;
+}
+header{
+  background:linear-gradient(135deg,#0b57d0,#123b8f);
+  color:#fff;
+  padding:30px 18px 25px;
+  text-align:center;
+  box-shadow:0 3px 14px #0002;
+}
+header h1{font-size:32px;margin-bottom:7px}
+header p{font-size:15px;opacity:.94}
+nav{
+  background:#fff;
+  padding:10px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:50;
+  box-shadow:0 2px 10px #0001;
+}
+nav a{
+  display:inline-block;
+  text-decoration:none;
+  color:#0b57d0;
+  font-weight:700;
+  padding:9px 14px;
+  border-radius:8px;
+  margin:2px;
+}
+nav a:hover{background:#eaf1ff}
+
+.container{max-width:1100px;margin:auto;padding:22px 15px}
+.hero{
+  background:#fff;
+  border-radius:18px;
+  padding:27px 20px;
+  margin-bottom:22px;
+  text-align:center;
+  box-shadow:0 3px 16px #00000012;
+}
+.hero h2{font-size:25px;margin-bottom:8px;color:#123b8f}
+.hero p{color:#5c6678;line-height:1.55}
+
+.section-title{
+  font-size:22px;
+  color:#123b8f;
+  margin:27px 0 13px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
+  gap:15px;
+}
+.card{
+  background:#fff;
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 3px 13px #00000012;
+  border:1px solid #e5eaf2;
+}
+.icon{font-size:31px;margin-bottom:9px}
+.card h3{font-size:18px;margin-bottom:7px}
+.card p{
+  font-size:13px;
+  color:#667085;
+  min-height:40px;
+  line-height:1.45;
+}
+.btn{
+  display:block;
+  text-align:center;
+  text-decoration:none;
+  background:#0b57d0;
+  color:#fff;
+  padding:11px 12px;
+  border-radius:9px;
+  margin-top:14px;
+  font-weight:700;
+}
+.btn:hover{background:#0846ad;color:#fff}
+
+.notice{
+  background:#fff8e1;
+  border-left:5px solid #f2b01e;
+  padding:15px;
+  border-radius:9px;
+  margin-top:22px;
+  line-height:1.5;
+  font-size:14px;
+}
+
+/* MIS REPORT PANEL */
+.mis-panel{
+  background:#fff;
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 4px 18px #00000012;
+  border:1px solid #e4e9f2;
+}
+.mis-top{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-bottom:15px;
+}
+.mis-field label{
+  display:block;
+  font-size:13px;
+  font-weight:700;
+  color:#172033;
+  margin-bottom:5px;
+}
+.mis-field input{
+  width:100%;
+  border:1px solid #d7dfeb;
+  border-radius:11px;
+  padding:12px 13px;
+  font-size:14px;
+  outline:none;
+  background:#fff;
+}
+.mis-field input:focus{border-color:#0b57d0}
+
+.mis-search{
+  display:flex;
+  gap:10px;
+  padding:9px;
+  border:1px solid #d9e0e9;
+  background:#f8fafc;
+  margin-bottom:15px;
+}
+.mis-search input{
+  flex:1;
+  border:1px solid #d7dfeb;
+  border-radius:10px;
+  padding:11px 13px;
+  font-size:14px;
+  outline:none;
+}
+.expand-all{
+  border:0;
+  background:linear-gradient(135deg,#0b57d0,#285f99);
+  color:#fff;
+  border-radius:11px;
+  padding:0 15px;
+  font-weight:700;
+  cursor:pointer;
+}
+.expand-all:hover{opacity:.92}
+
+.report-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px 24px;
+}
+.report-item{
+  background:linear-gradient(135deg,#07559b,#326ca8);
+  border-radius:17px;
+  border-left:5px solid #ff8c00;
+  overflow:hidden;
+  box-shadow:0 3px 10px #00000014;
+}
+.report-head{
+  width:100%;
+  border:0;
+  background:transparent;
+  color:#fff;
+  padding:15px 15px;
+  text-align:left;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.report-head .arrow{
+  font-size:18px;
+  transition:.2s;
+}
+.report-item.open .arrow{transform:rotate(180deg)}
+.report-body{
+  display:none;
+  background:#fff;
+  padding:13px;
+  border:1px solid #dfe5ee;
+  border-top:0;
+  border-radius:0 0 14px 14px;
+}
+.report-item.open .report-body{display:block}
+.report-body p{
+  color:#5c6678;
+  font-size:13px;
+  margin-bottom:9px;
+}
+.report-open{
+  display:block;
+  text-align:center;
+  text-decoration:none;
+  background:#0b57d0;
+  color:#fff;
+  padding:9px 12px;
+  border-radius:8px;
+  font-size:13px;
+  font-weight:700;
+}
+.report-open:hover{background:#0846ad;color:#fff}
+
+.mis-note{
+  margin-top:15px;
+  background:#eef6ff;
+  border-left:4px solid #0b57d0;
+  padding:12px;
+  border-radius:8px;
+  color:#445064;
+  font-size:13px;
+}
+
+footer{
+  margin-top:30px;
+  background:#172033;
+  color:#fff;
+  text-align:center;
+  padding:21px;
+  font-size:13px;
+}
+.small{opacity:.75;margin-top:5px}
+
+@media(max-width:750px){
+  .report-grid{grid-template-columns:1fr}
+  .mis-top{grid-template-columns:1fr}
+}
+@media(max-width:500px){
+  header h1{font-size:26px}
+  .hero h2{font-size:21px}
+  .container{padding:16px 11px}
+  .mis-search{flex-direction:column}
+  .expand-all{padding:11px}
+}
+</style>
+</head>
+
+<body>
+
+<header id="home">
+  <h1>ANUP REPORT</h1>
+  <p>VB-G RAM G • MIS Reports • Official Quick Links</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#reports">Reports</a>
+  <a href="#mis">MIS Index</a>
+  <a href="#official">Official Links</a>
+</nav>
+
+<main class="container">
+
+<section class="hero">
+  <h2>📊 VB-G RAM G Reports Portal</h2>
+  <p>Important VB-G RAM G reports and official services — quick access from one page.</p>
+</section>
+
+<h2 class="section-title" id="reports">📋 Reports</h2>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="icon">📊</div>
+    <h3>MIS Report</h3>
+    <p>Open the official VB-G RAM G MIS Report page.</p>
+    <a class="btn" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN MIS REPORT</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">💰</div>
+    <h3>Payment Dashboard</h3>
+    <p>Open the official VB-G RAM G reporting portal.</p>
+    <a class="btn" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN DASHBOARD</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">👷</div>
+    <h3>Daily Attendance</h3>
+    <p>Open the official report portal for attendance-related reports.</p>
+    <a class="btn" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN ATTENDANCE</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">🏛️</div>
+    <h3>State Report</h3>
+    <p>Open the official VB-G RAM G state report section.</p>
+    <a class="btn" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN STATE REPORT</a>
+  </div>
+
+</div>
+
+<h2 class="section-title" id="mis">📑 VB-G RAM G MIS Report Index</h2>
+
+<section class="mis-panel">
+
+  <div class="mis-top">
+    <div class="mis-field">
+      <label>Financial Year</label>
+      <input type="text" value="2026-2027" readonly>
+    </div>
+    <div class="mis-field">
+      <label>State Name</label>
+      <input type="text" value="WEST BENGAL" readonly>
+    </div>
+  </div>
+
+  <div class="mis-search">
+    <input type="text" id="reportSearch" placeholder="Search report...">
+    <button class="expand-all" id="expandBtn" type="button">↕ Expand All</button>
+  </div>
+
+  <div class="report-grid" id="reportGrid">
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R1. Beneficiary Detail</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Beneficiary related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R18. Drought/Agriculture/Irrigation</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Drought, agriculture and irrigation related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R2. Planning of Works/SRDP</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Planning of works and SRDP report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R19. Unemployment Allowance Report</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Unemployment allowance related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R3. Demand and Allocation of Works</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Demand and allocation of works report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R20. Ombudsperson Report</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Ombudsperson related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R4. Musteroll and Wagelist</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Muster roll and wage list related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R21. Mobile Monitoring System</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Mobile monitoring system report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R5. Physical Progress</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Physical progress report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R22. e-Work File</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>e-Work File related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R6. Work Progress</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Work progress report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R23. Barefoot Technician</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Barefoot Technician related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R7. Financial Progress</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Financial progress report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R8. Employment Status</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Employment status related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R9. Demand for Work</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Demand for work related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R10. Work Allocation</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Work allocation related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R11. Wage Payment</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Wage payment related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R12. Household Employment</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Household employment related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R13. Job Card Report</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Job Card related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R14. Asset Report</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Asset related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R15. Social Audit Report</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Social audit related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R16. Grievance Report</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Grievance related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+    <div class="report-item">
+      <button class="report-head" type="button"><span>R17. Monitoring Report</span><span class="arrow">⌄</span></button>
+      <div class="report-body"><p>Monitoring related report.</p><a class="report-open" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">OPEN OFFICIAL MIS REPORT</a></div>
+    </div>
+
+  </div>
+
+  <div class="mis-note">
+    <strong>Note:</strong> এই page থেকে report খুললে official VB-G RAM G website-এ report page open হবে। কোনো report-এর জন্য login, CAPTCHA বা additional selection প্রয়োজন হলে সেটি official website-এই complete করতে হবে।
+  </div>
+
+</section>
+
+<h2 class="section-title" id="official">🔗 Official Links</h2>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="icon">🌐</div>
+    <h3>VB-G RAM G MIS Portal</h3>
+    <p>Official VB-G RAM G MIS reporting website.</p>
+    <a class="btn" href="https://vbgramgrep.dord.gov.in/VBGRAMG/MISreport.aspx" target="_blank" rel="noopener">VISIT OFFICIAL SITE</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">🏠</div>
+    <h3>VB-G RAM G Home</h3>
+    <p>Open the official VB-G RAM G website.</p>
+    <a class="btn" href="https://vbgramgrep.dord.gov.in/" target="_blank" rel="noopener">OPEN HOME</a>
+  </div>
+
+</div>
+
+<div class="notice">
+  <strong>ℹ️ Note:</strong> This is a quick-link page. Reports are opened on the official Government website.
+  If a report requires CAPTCHA or login, complete it on the official website.
+</div>
+
+</main>
+
+<footer>
+  <strong>ANUP REPORT</strong>
+  <div class="small">Quick access portal • Official links only</div>
+</footer>
+
+<script>
+const reportItems = Array.from(document.querySelectorAll('.report-item'));
+const expandBtn = document.getElementById('expandBtn');
+const search = document.getElementById('reportSearch');
+
+reportItems.forEach(item=>{
+  const head = item.querySelector('.report-head');
+  head.addEventListener('click',()=>{
+    item.classList.toggle('open');
+  });
+});
+
+let expanded = false;
+expandBtn.addEventListener('click',()=>{
+  expanded = !expanded;
+  reportItems.forEach(item=>{
+    if(item.style.display !== 'none') item.classList.toggle('open', expanded);
+  });
+  expandBtn.textContent = expanded ? '↕ Collapse All' : '↕ Expand All';
+});
+
+search.addEventListener('input',()=>{
+  const term = search.value.toLowerCase().trim();
+  reportItems.forEach(item=>{
+    const text = item.querySelector('.report-head').innerText.toLowerCase();
+    item.style.display = text.includes(term) ? '' : 'none';
+  });
+});
+</script>
+
+</body>
+</html>
