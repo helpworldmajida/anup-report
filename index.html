@@ -72,160 +72,7 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
       <button type="button" onclick="filterCategory('all')">All</button>
       <button type="button" onclick="filterCategory(&#x27;other bookmarks&#x27;)">Other Bookmarks</button><button type="button" onclick="filterCategory(&#x27;sheet&#x27;)">Sheet</button><button type="button" onclick="filterCategory(&#x27;login&#x27;)">LOGIN</button><button type="button" onclick="filterCategory(&#x27;work&#x27;)">WORK</button><button type="button" onclick="filterCategory(&#x27;all keep&#x27;)">All Keep</button><button type="button" onclick="filterCategory(&#x27;tube&#x27;)">Tube</button><button type="button" onclick="filterCategory(&#x27;photo&#x27;)">photo</button><button type="button" onclick="filterCategory(&#x27;need&#x27;)">Need</button><button type="button" onclick="filterCategory(&#x27;pdf&#x27;)">PDF</button><button type="button" onclick="filterCategory(&#x27;rio&#x27;)">RIO</button><button type="button" onclick="filterCategory(&#x27;election&#x27;)">election</button><button type="button" onclick="filterCategory(&#x27;doing&#x27;)">doing</button>
     </div>
-    <!-- ================================
-     FEEDBACK SECTION
-================================ -->
-
-<style>
-.feedback-section {
-    background: linear-gradient(135deg, #0b57d0, #123b8f);
-    color: white;
-    padding: 30px 20px;
-    border-radius: 18px;
-    margin: 30px 0;
-    box-shadow: 0 5px 20px #0002;
-}
-
-.feedback-section h2 {
-    text-align: center;
-    margin-bottom: 8px;
-    font-size: 25px;
-}
-
-.feedback-tagline {
-    text-align: center;
-    opacity: .9;
-    margin-bottom: 22px;
-    font-size: 14px;
-}
-
-.feedback-form {
-    max-width: 650px;
-    margin: auto;
-    background: white;
-    padding: 22px;
-    border-radius: 15px;
-    color: #172033;
-}
-
-.feedback-form label {
-    display: block;
-    font-weight: 700;
-    margin-bottom: 6px;
-    margin-top: 12px;
-}
-
-.feedback-form input,
-.feedback-form textarea,
-.feedback-form select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #d5dce7;
-    border-radius: 9px;
-    font-size: 14px;
-    outline: none;
-}
-
-.feedback-form input:focus,
-.feedback-form textarea:focus,
-.feedback-form select:focus {
-    border-color: #0b57d0;
-    box-shadow: 0 0 0 3px #0b57d01a;
-}
-
-.feedback-form textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.feedback-submit {
-    width: 100%;
-    border: none;
-    background: #0b57d0;
-    color: white;
-    padding: 13px;
-    margin-top: 18px;
-    border-radius: 9px;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.feedback-submit:hover {
-    background: #0846ad;
-}
-
-.feedback-note {
-    text-align: center;
-    color: #667085;
-    font-size: 12px;
-    margin-top: 10px;
-}
-</style>
-
-<section class="feedback-section" id="feedback">
-
-    <h2>💬 Feedback</h2>
-
-    <div class="feedback-tagline">
-        Help us improve ANUP REPORT — Your feedback matters!
-    </div>
-
-    <form class="feedback-form"
-          action="https://formsubmit.co/YOUR_EMAIL@gmail.com"
-          method="POST">
-
-        <!-- FormSubmit settings -->
-        <input type="hidden" name="_subject"
-               value="New Feedback - ANUP REPORT">
-
-        <input type="hidden" name="_captcha"
-               value="true">
-
-        <input type="hidden" name="_template"
-               value="table">
-
-        <label for="name">👤 Your Name</label>
-        <input type="text"
-               id="name"
-               name="name"
-               placeholder="Enter your name"
-               required>
-
-        <label for="email">📧 Email Address</label>
-        <input type="email"
-               id="email"
-               name="email"
-               placeholder="Enter your email"
-               required>
-
-        <label for="rating">⭐ Your Rating</label>
-        <select id="rating" name="rating" required>
-            <option value="">Select Rating</option>
-            <option value="5 - Excellent">⭐⭐⭐⭐⭐ Excellent</option>
-            <option value="4 - Very Good">⭐⭐⭐⭐ Very Good</option>
-            <option value="3 - Good">⭐⭐⭐ Good</option>
-            <option value="2 - Average">⭐⭐ Average</option>
-            <option value="1 - Poor">⭐ Poor</option>
-        </select>
-
-        <label for="feedback">📝 Your Feedback</label>
-        <textarea id="feedback"
-                  name="feedback"
-                  placeholder="Write your feedback here..."
-                  required></textarea>
-
-        <button type="submit" class="feedback-submit">
-            📤 Submit Feedback
-        </button>
-
-        <div class="feedback-note">
-            Your feedback will be sent securely to the website administrator.
-        </div>
-
-    </form>
-
-</section>
+   
   </div>
 
   <div id="empty" class="empty">কোনো matching link পাওয়া যায়নি।</div>
@@ -3578,6 +3425,160 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
           <div class="go">↗</div>
         </a>
       </div>
+       <!-- ================================
+     FEEDBACK SECTION
+================================ -->
+
+<style>
+.feedback-section {
+    background: linear-gradient(135deg, #0b57d0, #123b8f);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 18px;
+    margin: 30px 0;
+    box-shadow: 0 5px 20px #0002;
+}
+
+.feedback-section h2 {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 25px;
+}
+
+.feedback-tagline {
+    text-align: center;
+    opacity: .9;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+.feedback-form {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 22px;
+    border-radius: 15px;
+    color: #172033;
+}
+
+.feedback-form label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 6px;
+    margin-top: 12px;
+}
+
+.feedback-form input,
+.feedback-form textarea,
+.feedback-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5dce7;
+    border-radius: 9px;
+    font-size: 14px;
+    outline: none;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus,
+.feedback-form select:focus {
+    border-color: #0b57d0;
+    box-shadow: 0 0 0 3px #0b57d01a;
+}
+
+.feedback-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.feedback-submit {
+    width: 100%;
+    border: none;
+    background: #0b57d0;
+    color: white;
+    padding: 13px;
+    margin-top: 18px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.feedback-submit:hover {
+    background: #0846ad;
+}
+
+.feedback-note {
+    text-align: center;
+    color: #667085;
+    font-size: 12px;
+    margin-top: 10px;
+}
+</style>
+
+<section class="feedback-section" id="feedback">
+
+    <h2>💬 Feedback</h2>
+
+    <div class="feedback-tagline">
+        Help us improve ANUP REPORT — Your feedback matters!
+    </div>
+
+    <form class="feedback-form"
+          action="https://formsubmit.co/YOUR_EMAIL@gmail.com"
+          method="POST">
+
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_subject"
+               value="New Feedback - ANUP REPORT">
+
+        <input type="hidden" name="_captcha"
+               value="true">
+
+        <input type="hidden" name="_template"
+               value="table">
+
+        <label for="name">👤 Your Name</label>
+        <input type="text"
+               id="name"
+               name="name"
+               placeholder="Enter your name"
+               required>
+
+        <label for="email">📧 Email Address</label>
+        <input type="email"
+               id="email"
+               name="email"
+               placeholder="Enter your email"
+               required>
+
+        <label for="rating">⭐ Your Rating</label>
+        <select id="rating" name="rating" required>
+            <option value="">Select Rating</option>
+            <option value="5 - Excellent">⭐⭐⭐⭐⭐ Excellent</option>
+            <option value="4 - Very Good">⭐⭐⭐⭐ Very Good</option>
+            <option value="3 - Good">⭐⭐⭐ Good</option>
+            <option value="2 - Average">⭐⭐ Average</option>
+            <option value="1 - Poor">⭐ Poor</option>
+        </select>
+
+        <label for="feedback">📝 Your Feedback</label>
+        <textarea id="feedback"
+                  name="feedback"
+                  placeholder="Write your feedback here..."
+                  required></textarea>
+
+        <button type="submit" class="feedback-submit">
+            📤 Submit Feedback
+        </button>
+
+        <div class="feedback-note">
+            Your feedback will be sent securely to the website administrator.
+        </div>
+
+    </form>
+
+</section>
     </section>
   </div>
 </main>
