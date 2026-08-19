@@ -39,6 +39,82 @@ header p{margin:0;opacity:.94;font-size:14px}
 .empty{display:none;text-align:center;background:#fff;padding:30px;border-radius:14px;color:#667085}
 footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13px}
 @media(max-width:750px){.links-grid{grid-template-columns:1fr}.toolbar{flex-wrap:wrap}.search{flex-basis:100%}.home-btn,.expand-btn{height:42px;flex:1}header h1{font-size:25px}}
+
+/* Floating quick navigation */
+.quick-nav-float{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:1000;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:8px;
+}
+.quick-nav-toggle{
+  border:0;
+  border-radius:999px;
+  padding:11px 15px;
+  font-weight:700;
+  cursor:pointer;
+  color:#fff;
+  background:linear-gradient(135deg,#0b57d0,#123b8f);
+  box-shadow:0 5px 18px #0003;
+}
+.quick-nav-panel{
+  display:none;
+  width:min(320px,calc(100vw - 32px));
+  max-height:min(70vh,520px);
+  overflow:auto;
+  background:#fff;
+  border:1px solid #dfe6ef;
+  border-radius:16px;
+  padding:12px;
+  box-shadow:0 10px 30px #0003;
+}
+.quick-nav-panel.open{display:block}
+.quick-nav-title{
+  font-size:14px;
+  font-weight:700;
+  color:#123b8f;
+  padding:4px 6px 8px;
+}
+.quick-nav-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
+}
+.quick-nav-link{
+  display:block;
+  text-decoration:none;
+  border:1px solid #d7e0ec;
+  background:#f7faff;
+  color:#123b8f;
+  border-radius:10px;
+  padding:8px 9px;
+  font-size:12px;
+  font-weight:700;
+  text-align:left;
+}
+.quick-nav-link:hover{
+  background:#eaf2ff;
+  border-color:#7aa6e8;
+}
+.quick-nav-top{
+  margin-top:8px;
+  width:100%;
+  border:0;
+  background:#475569;
+  color:#fff;
+  border-radius:10px;
+  padding:9px;
+  cursor:pointer;
+  font-weight:700;
+}
+@media(max-width:750px){
+  .quick-nav-float{right:12px;bottom:12px}
+  .quick-nav-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -64,8 +140,31 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
   </div>
 </div>
 
+
+<!-- Floating group-wise quick navigation -->
+<div class="quick-nav-float">
+  <div id="quickNavPanel" class="quick-nav-panel" aria-label="Quick group navigation">
+    <div class="quick-nav-title">📌 Quick Group Navigation</div>
+    <div class="quick-nav-grid">
+      <a class="quick-nav-link" href="#group-other-bookmarks">🔗 Other Bookmarks</a>
+      <a class="quick-nav-link" href="#group-sheet">📊 Sheet</a>
+      <a class="quick-nav-link" href="#group-login">🔐 LOGIN</a>
+      <a class="quick-nav-link" href="#group-work">💼 WORK</a>
+      <a class="quick-nav-link" href="#group-all-keep">📌 All Keep</a>
+      <a class="quick-nav-link" href="#group-tube">▶️ Tube</a>
+      <a class="quick-nav-link" href="#group-photo">📷 photo</a>
+      <a class="quick-nav-link" href="#group-need">⭐ Need</a>
+      <a class="quick-nav-link" href="#group-pdf">📄 PDF</a>
+      <a class="quick-nav-link" href="#group-rio">🧒 RIO</a>
+      <a class="quick-nav-link" href="#group-election">🗳️ election</a>
+      <a class="quick-nav-link" href="#group-doing">✅ doing</a>
+    </div>
+    <button type="button" class="quick-nav-top" onclick="goToTop()">⬆️ Back to Top / Groups</button>
+  </div>
+  <button id="quickNavToggle" type="button" class="quick-nav-toggle" aria-expanded="false" aria-controls="quickNavPanel">📌 Quick Groups</button>
+</div>
 <main class="wrap">
-  <div class="summary">
+  <div class="summary" id="top">
     <h2>⭐ Majida 9749179734</h2>
     <p>প্রয়োজনীয় সকল রিপোর্ট — এক ক্লিকেই হাতের মুঠোয় </p>
     <div class="quick" id="quick">
@@ -78,7 +177,7 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
   <div id="empty" class="empty">কোনো matching link পাওয়া যায়নি।</div>
   <div id="categories">
     
-    <section class="category" data-category="other bookmarks">
+    <section id="group-other-bookmarks" class="category" data-category="other bookmarks">
       <div class="category-head">
         <div><span class="category-icon">🔗</span><span>Other Bookmarks</span></div>
         <span class="count">19 links</span>
@@ -239,7 +338,7 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
         </a>
       </div>
     </section>
-    <section class="category" data-category="sheet">
+    <section id="group-sheet" class="category" data-category="sheet">
       <div class="category-head">
         <div><span class="category-icon">📊</span><span>Sheet</span></div>
         <span class="count">85 links</span>
@@ -928,7 +1027,7 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
         </a>
       </div>
     </section>
-    <section class="category" data-category="login">
+    <section id="group-login" class="category" data-category="login">
       <div class="category-head">
         <div><span class="category-icon">🔐</span><span>LOGIN</span></div>
         <span class="count">23 links</span>
@@ -1121,7 +1220,7 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
         </a>
       </div>
     </section>
-    <section class="category" data-category="work">
+    <section id="group-work" class="category" data-category="work">
       <div class="category-head">
         <div><span class="category-icon">💼</span><span>WORK</span></div>
         <span class="count">126 links</span>
@@ -2138,7 +2237,7 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
         </a>
       </div>
     </section>
-    <section class="category" data-category="all keep">
+    <section id="group-all-keep" class="category" data-category="all keep">
       <div class="category-head">
         <div><span class="category-icon">📌</span><span>All Keep</span></div>
         <span class="count">8 links</span>
@@ -2211,7 +2310,7 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
         </a>
       </div>
     </section>
-    <section class="category" data-category="tube">
+    <section id="group-tube" class="category" data-category="tube">
       <div class="category-head">
         <div><span class="category-icon">▶️</span><span>Tube</span></div>
         <span class="count">11 links</span>
@@ -2308,7 +2407,7 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
         </a>
       </div>
     </section>
-    <section class="category" data-category="photo">
+    <section id="group-photo" class="category" data-category="photo">
       <div class="category-head">
         <div><span class="category-icon">📷</span><span>photo</span></div>
         <span class="count">38 links</span>
@@ -2621,7 +2720,7 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
         </a>
       </div>
     </section>
-    <section class="category" data-category="need">
+    <section id="group-need" class="category" data-category="need">
       <div class="category-head">
         <div><span class="category-icon">⭐</span><span>Need</span></div>
         <span class="count">60 links</span>
@@ -3110,7 +3209,7 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
         </a>
       </div>
     </section>
-    <section class="category" data-category="pdf">
+    <section id="group-pdf" class="category" data-category="pdf">
       <div class="category-head">
         <div><span class="category-icon">📄</span><span>PDF</span></div>
         <span class="count">14 links</span>
@@ -3231,7 +3330,7 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
         </a>
       </div>
     </section>
-    <section class="category" data-category="rio">
+    <section id="group-rio" class="category" data-category="rio">
       <div class="category-head">
         <div><span class="category-icon">👦</span><span>RIO</span></div>
         <span class="count">11 links</span>
@@ -3328,7 +3427,7 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
         </a>
       </div>
     </section>
-    <section class="category" data-category="election">
+    <section id="group-election" class="category" data-category="election">
       <div class="category-head">
         <div><span class="category-icon">🗳️</span><span>election</span></div>
         <span class="count">7 links</span>
@@ -3393,7 +3492,7 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
         </a>
       </div>
     </section>
-    <section class="category" data-category="doing">
+    <section id="group-doing" class="category" data-category="doing">
       <div class="category-head">
         <div><span class="category-icon">🛠️</span><span>doing</span></div>
         <span class="count">3 links</span>
@@ -3816,6 +3915,37 @@ search.addEventListener('input', () => {
 });
 
 updateExpandButton();
+
+// Floating quick group navigation.
+const quickNavToggle = document.getElementById('quickNavToggle');
+const quickNavPanel = document.getElementById('quickNavPanel');
+
+quickNavToggle.addEventListener('click', () => {
+  const open = quickNavPanel.classList.toggle('open');
+  quickNavToggle.setAttribute('aria-expanded', String(open));
+});
+
+function goToTop() {
+  quickNavPanel.classList.remove('open');
+  quickNavToggle.setAttribute('aria-expanded', 'false');
+  document.getElementById('top').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+document.querySelectorAll('.quick-nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    quickNavPanel.classList.remove('open');
+    quickNavToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// Close the floating menu when clicking outside it.
+document.addEventListener('click', (event) => {
+  const container = document.querySelector('.quick-nav-float');
+  if (!container.contains(event.target)) {
+    quickNavPanel.classList.remove('open');
+    quickNavToggle.setAttribute('aria-expanded', 'false');
+  }
+});
 </script>
 </body>
 </html>
