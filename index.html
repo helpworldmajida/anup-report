@@ -115,45 +115,87 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
   .quick-nav-float{right:12px;bottom:12px}
   .quick-nav-grid{grid-template-columns:1fr}
 }
-/* ===== CATEGORY 2 COLUMN LAYOUT ===== */
+/* =========================================
+   FULL WIDTH WEBSITE
+   ========================================= */
 
-#categories{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:16px;
-  align-items:start;
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/* Category card */
-#categories .category{
-  margin:0;
-  width:100%;
+body {
+    overflow-x: hidden;
 }
 
-/* Category header */
-#categories .category-head{
-  min-height:58px;
+/* Main website wrapper */
+.container,
+.wrapper,
+.main-container,
+.page-container,
+.content-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
-/* Keep links inside each category */
-#categories .links-grid{
-  grid-template-columns:1fr;
+/* Header full width */
+header {
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
-/* ===== MOBILE ===== */
-@media(max-width:750px){
-  #categories{
-    grid-template-columns:1fr;
-    gap:14px;
-  }
+/* Navigation full width */
+nav,
+.navbar,
+.navigation {
+    width: 100% !important;
+    max-width: 100% !important;
+}
 
-  #categories .category{
-    margin:0;
-  }
+/* Main content full width */
+main {
+    width: 100% !important;
+    max-width: 100% !important;
+}
 
-  #categories .links-grid{
-    grid-template-columns:1fr;
-  }
+/* Footer full width */
+footer {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Section full width */
+section {
+    max-width: 100%;
+}
+
+/* Keep content nicely spaced on large screens */
+.content,
+.main-content,
+.hero,
+.notice-section {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile */
+@media (max-width: 750px) {
+
+    .content,
+    .main-content,
+    .hero,
+    .notice-section {
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
 }</style>
 </head>
 <body>
