@@ -115,43 +115,38 @@ footer{background:#172033;color:#fff;text-align:center;padding:20px;font-size:13
   .quick-nav-float{right:12px;bottom:12px}
   .quick-nav-grid{grid-template-columns:1fr}
 }
-/* ===== CATEGORY 3 COLUMN LAYOUT ===== */
+/* ===== ONLY CATEGORY SECTION - 3 COLUMNS ===== */
 
 #categories{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0, 1fr));
-  gap:16px;
-  align-items:start;
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:16px;
+    align-items:start;
 }
 
 #categories .category{
-  margin:0;
-  width:100%;
+    width:100%;
+    margin:0;
 }
 
-/* Category header */
-#categories .category-head{
-  min-height:58px;
-}
-
-/* Category-এর ভিতরের link এক কলামে থাকবে */
+/* Category-এর ভিতরের links আগের মতো থাকবে */
 #categories .links-grid{
-  grid-template-columns:1fr;
-}
-
-/* ===== MOBILE ===== */
-
-@media(max-width:900px){
-  #categories{
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media(max-width:600px){
-  #categories{
     grid-template-columns:1fr;
-  }
-}</style>
+}
+
+/* Tablet */
+@media(max-width:900px){
+    #categories{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media(max-width:600px){
+    #categories{
+        grid-template-columns:1fr;
+    }
+</style>
 </head>
 <body>
 <header>
