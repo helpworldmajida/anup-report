@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>India Tools — Photo • PDF • AI • ID Card</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Segoe UI,Arial;background:#f7f4ef;color:#2b2118}
+header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #e5e7eb;padding:10px 3%;display:flex;align-items:center;gap:10px}
+.logo{background:#c76500;color:#fff;padding:11px;border-radius:10px;font-weight:900}.brand small{display:block;font-size:9px;color:#7a8497}.actions{margin-left:auto}button{cursor:pointer}
+.hero{padding:28px 3% 15px;background:linear-gradient(135deg,#fff1df,#fffaf4)}h1{margin:0 0 7px;font-size:32px}.hero p{color:#687389;margin:0}.search{margin-top:15px;width:min(800px,100%);padding:12px;border:1px solid #d7ddea;border-radius:10px}
+nav{padding:12px 3%;display:flex;gap:6px;overflow:auto;background:#f4f6fa}.filter{padding:7px 12px;border:1px solid #d8deea;background:#fff;border-radius:18px;white-space:nowrap}.active{background:#c76500;color:#fff}
+main{padding:0 3% 40px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+.card{background:#fff;border:1px solid #e5e8ef;border-radius:13px;padding:13px;min-height:150px;display:flex;flex-direction:column;box-shadow:0 3px 12px #17203312}
+.ico{font-size:24px}.card h3{font-size:14px;margin:7px 0 5px}.card p{font-size:10.5px;line-height:1.4;color:#6d778b;flex:1;margin:0 0 9px}.open{background:#c76500;color:white;border:0;border-radius:7px;padding:8px;font-weight:700;font-size:11px}
+.badge{font-size:8px;margin-left:4px;background:#fff0dc;color:#a84f00;padding:2px 5px;border-radius:9px}
+footer{text-align:center;color:#7b8497;font-size:10px;padding:25px}
+.dark{background:#101827;color:#eef2ff}.dark header,.dark .card,.dark .filter{background:#182033;color:#fff;border-color:#2d3a50}.dark nav{background:#101827}.dark .hero{background:#172554}.dark .search{background:#182033;color:#fff;border-color:#374151}
+.modal{display:none;position:fixed;inset:0;background:#0008;z-index:20;padding:15px;align-items:center;justify-content:center}.modal.show{display:flex}.box{background:#fff;color:#172033;width:min(900px,100%);max-height:90vh;overflow:auto;border-radius:16px;padding:20px;position:relative}.dark .box{background:#182033;color:#fff}.close{position:absolute;right:12px;top:8px;border:0;background:none;font-size:25px}.ctrl{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.ctrl input,.ctrl select,.ctrl button{padding:8px;border:1px solid #ccd5e2;border-radius:7px}.ctrl button{background:#c76500;color:#fff;border:0}.canvas{max-width:100%;border:1px dashed #aaa;display:block;margin:12px auto}
+@media(max-width:600px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.card{min-height:155px;padding:10px}h1{font-size:25px}}
+</style>
+
+<style>
+:root{--gerua:#c76500;--gerua-dark:#a94f00;--gerua-light:#fff0dc}
+.brand b{color:var(--gerua-dark)}
+.site-credit{max-width:1100px;margin:4px auto 0;padding:0 3%;text-align:center;font-size:12px;color:#6f5b4a}
+.site-credit strong{color:var(--gerua-dark)}
+.special-note{margin:7px auto 0;max-width:760px;font-size:11px;color:#8a735f}
+footer{background:#fff8ef;border-top:1px solid #ead8c3;margin-top:20px}
+.feedback-btn{display:inline-block;margin-top:10px;background:var(--gerua);color:#fff;border:0;border-radius:7px;padding:7px 14px;font-weight:700;font-size:11px;text-decoration:none;cursor:pointer}
+.feedback-btn:hover{background:var(--gerua-dark)}
+.feedback-box textarea{width:100%;min-height:120px;padding:10px;border:1px solid #d9c6b0;border-radius:8px;resize:vertical}
+.feedback-box input{width:100%;padding:9px;border:1px solid #d9c6b0;border-radius:8px;margin:5px 0 10px}
+.credit-card{background:#fff8ef;border:1px solid #ead8c3;border-radius:10px;padding:12px;margin-top:12px;text-align:center}
+.dark .site-credit{color:#c9b8a6}.dark .site-credit strong{color:#ffb36b}
+.dark footer{background:#171b27;border-color:#3a3028}.dark .special-note{color:#c9b8a6}
+.dark .feedback-box textarea,.dark .feedback-box input{background:#182033;color:#fff;border-color:#57483b}
+</style>
+
+</head>
+<body>
+<header><div class="logo">IT</div><div class="brand"><b>India Tools</b><small>PHOTO • PDF • AI • ID CARD • OFFICE</small></div><div class="actions"><button onclick="document.body.classList.toggle('dark')">☾</button></div></header>
+<section class="hero"><h1>Photo, PDF & AI Tools</h1><p>এক জায়গায় প্রয়োজনীয় Photo, PDF, AI, ID Card ও Office Tools — সহজ, দ্রুত ও সুন্দরভাবে।</p><input id="search" class="search" placeholder="Search ID card, AI photo, PDF, OCR, compressor..." oninput="render()">
+<div class="site-credit">
+  <strong>এই ওয়েবসাইটটি তৈরি করেছেন অনুপ বিশ্বাস</strong>
+  <div class="special-note">বিশেষভাবে <strong>মাজিদা অঞ্জলি স্টুডিও</strong>-র দৈনন্দিন ডিজিটাল, ফটো, ডকুমেন্ট ও অনলাইন কাজের সুবিধার্থে তৈরি। তবে প্রয়োজন অনুযায়ী অন্যরাও এটি ব্যবহার করতে পারবেন।</div>
+</div></section>
+<nav id="nav"></nav><main><div class="grid" id="grid"></div></main>
+<footer>
+  <div><strong>মাজিদা অঞ্জলি স্টুডিওর জন্য বিশেষভাবে তৈরি</strong></div>
+  <div style="margin-top:4px">এই ওয়েবসাইটটি তৈরি করেছেন <strong>অনুপ বিশ্বাস</strong> — ব্যবহার সহজ করা, সময় বাঁচানো এবং দৈনন্দিন ডিজিটাল কাজকে আরও সুবিধাজনক করাই মূল উদ্দেশ্য।</div>
+  <div class="special-note">অন্য ব্যক্তি বা প্রতিষ্ঠানও প্রয়োজন অনুযায়ী এই ওয়েবসাইটের টুলগুলো ব্যবহার করতে পারবেন।</div>
+  <button class="feedback-btn" onclick="feedback()">💬 Feedback / মতামত</button>
+</footer>
+<div class="modal" id="modal"><div class="box"><button class="close" onclick="closeM()">×</button><div id="tool"></div></div></div>
+
+<script>
+const T=[
+["ID Card Studio","ID","🪪","CR80, Aadhaar-style, PAN, Voter, custom size, colour, front/back, A4.","local"],
+["ID Card → A4","ID","🪪","Multiple cards automatically arranged on A4.","local"],
+["Front + Back Card","ID","🔄","Front and back image layout.","local"],
+["Passport Photo Maker","Photo","📷","Passport photo sheet, 6×7 or custom rows/columns.","local"],
+["A4 Photo Sheet","Photo","🖨️","Arrange multiple photos for printing.","local"],
+["Joint Photo Maker","Photo","👥","Put two or more photos together.","local"],
+["Photo Name & Date","Photo","🏷️","Add name and date under a photo.","local"],
+["AI Photo Enhancer","Photo","✨","AI image enhancement.","https://www.adobe.com/express/feature/image/enhance"],
+["AI Background Remover","Photo","🪄","AI background removal.","https://www.remove.bg/"],
+["AI Product Photo","Photo","🧑‍🎨","AI product photo editing.","https://www.photoroom.com/"],
+["AI Object Remover","Photo","🧹","Remove unwanted objects.","https://cleanup.pictures/"],
+["AI Image Upscaler","Photo","🔍","Increase image resolution with AI.","https://www.upscale.media/"],
+["Fotor AI","Photo","🎭","AI photo editing and effects.","https://www.fotor.com/"],
+["Pixlr AI","Photo","🖌️","AI online image editor.","https://pixlr.com/"],
+["Canva AI","Photo","🧩","AI design and image tools.","https://www.canva.com/"],
+["Adobe Express","Photo","🅰️","AI design and photo tools.","https://www.adobe.com/express/"],
+["Image Resize","Image","📐","Resize by pixels.","local"],
+["Image Compressor","Image","🗜️","Make large photos smaller.","local"],
+["JPG PNG WebP Converter","Image","🔄","Convert image formats.","local"],
+["Rotate / Flip Image","Image","↻","Rotate and mirror images.","local"],
+["Brightness / Contrast","Image","☀️","Adjust image appearance.","local"],
+["Image Crop","Image","✂️","Crop to required size.","local"],
+["TinyPNG","Image","🐼","Online image compression.","https://tinypng.com/"],
+["Squoosh","Image","🖼️","Advanced browser image compression.","https://squoosh.app/"],
+["CloudConvert","Image","☁️","Image/document conversion.","https://cloudconvert.com/"],
+["PDF Compressor","PDF","📉","Compress large PDF files.","https://www.ilovepdf.com/compress_pdf"],
+["PDF Merge","PDF","📚","Merge multiple PDFs.","https://www.ilovepdf.com/merge_pdf"],
+["PDF Split","PDF","✂️","Split/extract PDF pages.","https://www.ilovepdf.com/split_pdf"],
+["PDF → JPG","PDF","🖼️","Convert PDF pages to images.","https://www.ilovepdf.com/pdf_to_jpg"],
+["JPG → PDF","PDF","📄","Create PDF from images in browser.","local"],
+["PDF → Word","PDF","📝","Convert PDF to editable Word.","https://www.ilovepdf.com/pdf_to_word"],
+["PDF → Excel","PDF","📊","Extract PDF tables to Excel.","https://www.ilovepdf.com/pdf_to_excel"],
+["PDF OCR","PDF","🔤","OCR scanned PDFs.","https://www.adobe.com/acrobat/online/ocr-pdf.html"],
+["Smallpdf","PDF","🟥","Large PDF toolkit.","https://smallpdf.com/"],
+["PDF24","PDF","🧰","Free PDF tools.","https://tools.pdf24.org/"],
+["Sejda PDF","PDF","🛠️","PDF editing and conversion.","https://www.sejda.com/"],
+["TinyWow PDF","PDF","📦","PDF utilities.","https://tinywow.com/pdf"],
+["Document Scanner","Office","📑","Capture/upload document image.","local"],
+["Image OCR","Office","🔤","Extract text from images.","https://www.onlineocr.net/"],
+["Google Lens","Office","🔎","Text, object and translation recognition.","https://lens.google.com/"],
+["Signature Maker","Office","✍️","Draw and download signature.","local"],
+["QR Code Generator","Office","▦","Create QR codes.","local"],
+["Barcode Generator","Office","▥","Create Code 128 barcodes.","local"],
+["Cash Memo Maker","Office","🧾","Printable cash memo.","local"],
+["Excel / CSV Table","Office","📊","Create downloadable CSV.","local"],
+["ChatGPT","Office","🤖","AI writing, analysis and assistance.","https://chatgpt.com/"],
+["Google Gemini","Office","✨","AI assistant and analysis.","https://gemini.google.com/"],
+["Perplexity AI","Office","🔎","AI search and research.","https://www.perplexity.ai/"]
+];
+const cats=["All","ID","Photo","Image","PDF","Office"];let active="All";
+function filters(){nav.innerHTML=cats.map(c=>`<button class="filter ${c==active?'active':''}" onclick="active='${c}';filters();render()">${c}</button>`).join("")}
+function render(){let q=search.value.toLowerCase();let a=T.filter(t=>(active=="All"||t[1]==active)&&(t[0]+" "+t[3]).toLowerCase().includes(q));grid.innerHTML=a.map((t,i)=>`<article class="card"><div class="ico">${t[2]}</div><h3>${t[0]}${t[4]!="local"?'<span class="badge">WEB</span>':''}</h3><p>${t[3]}</p><button class="open" onclick="${t[4]=="local"?`openLocal(${T.indexOf(t)})`:`window.open('${t[4]}','_blank')`}">${t[4]=="local"?"Open Tool":"Open Website"}</button></article>`).join("")}
+function closeM(){modal.classList.remove("show")}
+function show(x){tool.innerHTML=x;modal.classList.add("show")}
+function img(f){return new Promise((r,j)=>{if(!f.files[0])return j("Choose image");let i=new Image;i.onload=()=>r(i);i.src=URL.createObjectURL(f.files[0])})}
+function openLocal(i){let n=T[i][0];if(n.includes("ID Card"))return idTool();if(n=="Passport Photo Maker")return passport();if(n=="A4 Photo Sheet"||n=="Joint Photo Maker")return sheet();if(["Image Resize","Image Compressor","JPG PNG WebP Converter","Rotate / Flip Image","Brightness / Contrast","Image Crop"].includes(n))return imageTool(n);if(n=="JPG → PDF")return jpgpdf();if(n=="Document Scanner")return scanner();if(n=="Signature Maker")return signature();if(n=="QR Code Generator")return qr();if(n=="Barcode Generator")return barcode();if(n=="Photo Name & Date")return label();if(n=="Cash Memo Maker")return cash();if(n=="Excel / CSV Table")return csv()}
+function idTool(){show(`<h2>🪪 ID Card Studio</h2><p>Size + colour + front/back + A4 copies</p><div class=ctrl><select id=pre><option value=85.6,54>CR80 / Standard ID</option><option value=85.6,54>Aadhaar-style</option><option value=85.6,54>PAN Card</option><option value=85.6,54>Voter ID</option><option value=85,55>Passport Card</option><option value=100,70>Large ID</option><option value=custom>Custom</option></select><input id=w value=85.6 type=number step=.1><input id=h value=54 type=number step=.1><input id=bg type=color value=#ffffff><input id=bc type=color value=#c76500><input id=front type=file accept=image/*><input id=back type=file accept=image/*><input id=copies value=8 type=number min=1 max=20><button onclick=makeID()>Create A4</button></div><canvas id=ic class=canvas></canvas><canvas id=is class=canvas width=794 height=1123></canvas>`);pre.onchange=()=>{if(pre.value!="custom"){let a=pre.value.split(",");w.value=a[0];h.value=a[1]}}}
+async function makeID(){let c=ic,x=c.getContext("2d");c.width=+w.value*10;c.height=+h.value*10;x.fillStyle=bg.value;x.fillRect(0,0,c.width,c.height);if(front.files[0]){let i=await img(front),s=Math.min(c.width/i.width,c.height/i.height);x.drawImage(i,(c.width-i.width*s)/2,(c.height-i.height*s)/2,i.width*s,i.height*s)}x.strokeStyle=bc.value;x.lineWidth=5;x.strokeRect(2,2,c.width-4,c.height-4);let y=is.getContext("2d");y.fillStyle="#fff";y.fillRect(0,0,is.width,is.height);let gap=10,n=+copies.value,cols=Math.max(1,Math.floor((is.width-gap)/(c.width+gap)));for(let k=0;k<n;k++){let col=k%cols,row=Math.floor(k/cols),xx=gap+col*(c.width+gap),yy=gap+row*(c.height+gap);if(xx+c.width<is.width&&yy+c.height<is.height)y.drawImage(c,xx,yy)}}
+function passport(){show(`<h2>📷 Passport Photo Maker</h2><div class=ctrl><input id=f type=file accept=image/*><input id=pc value=6 type=number><input id=pr value=7 type=number><button onclick=mkp()>Create</button></div><canvas id=pp class=canvas width=794 height=1123></canvas>`)}
+async function mkp(){let i=await img(f),x=pp.getContext("2d");x.fillStyle="#fff";x.fillRect(0,0,794,1123);for(let r=0;r<+pr.value;r++)for(let c=0;c<+pc.value;c++){let s=Math.min(95/i.width,132/i.height);x.drawImage(i,25+c*125+(95-i.width*s)/2,25+r*155+(132-i.height*s)/2,i.width*s,i.height*s)}}
+function sheet(){show(`<h2>🖨️ A4 Photo Sheet</h2><div class=ctrl><input id=sf type=file accept=image/* multiple><input id=sc value=3 type=number><input id=sr value=4 type=number><button onclick=mks()>Create</button></div><canvas id=sh class=canvas width=794 height=1123></canvas>`)}
+async function mks(){let fs=[...sf.files],ims=await Promise.all(fs.slice(0,+sc.value*+sr.value).map(img)),x=sh.getContext("2d");x.fillStyle="#fff";x.fillRect(0,0,794,1123);ims.forEach((i,n)=>{let c=n%+sc.value,r=Math.floor(n/+sc.value),s=Math.min(220/i.width,220/i.height);x.drawImage(i,15+c*255+(220-i.width*s)/2,15+r*270+(220-i.height*s)/2,i.width*s,i.height*s)})}
+function imageTool(n){show(`<h2>🖼️ ${n}</h2><div class=ctrl><input id=ifile type=file accept=image/*><input id=iw type=number placeholder=Width><input id=ih type=number placeholder=Height><input id=iq type=range min=.1 max=1 step=.05 value=.7><select id=fmt><option value=image/jpeg>JPG</option><option value=image/png>PNG</option><option value=image/webp>WebP</option></select><button onclick=proc()>Process</button></div><canvas id=iv class=canvas></canvas><a id=idl class=open>Download</a>`)}
+async function proc(){let i=await img(ifile),x=iv,w=+iw.value||i.width,h=+ih.value||i.height;x.width=w;x.height=h;x.getContext("2d").drawImage(i,0,0,w,h);idl.href=x.toDataURL(fmt.value,+iq.value);idl.download="processed."+fmt.value.split("/")[1]}
+function jpgpdf(){show(`<h2>📄 JPG → PDF</h2><p>Select images, then use your browser's Print → Save as PDF for a fully dependency-free version.</p><input id=pf type=file accept=image/* multiple>`)}
+function scanner(){show(`<h2>📑 Document Scanner</h2><input id=sf1 type=file accept=image/* capture=environment><canvas id=sv class=canvas></canvas><button class=open onclick=scn()>Prepare</button>`)}
+async function scn(){let i=await img(sf1);sv.width=i.width;sv.height=i.height;sv.getContext("2d").drawImage(i,0,0)}
+function signature(){show(`<h2>✍️ Signature Maker</h2><canvas id=sg width=800 height=280 style="background:#fff;width:100%;touch-action:none"></canvas><button class=open onclick=clearS()>Clear</button>`);let x=sg.getContext("2d"),d=0;x.lineWidth=3;x.lineCap="round";sg.onpointerdown=e=>{d=1;x.beginPath();x.moveTo(e.offsetX,e.offsetY)};sg.onpointermove=e=>{if(d){x.lineTo(e.offsetX,e.offsetY);x.stroke()}};sg.onpointerup=()=>d=0}
+function clearS(){sg.getContext("2d").clearRect(0,0,sg.width,sg.height)}
+function qr(){show(`<h2>▦ QR Code Generator</h2><input id=qt style="width:80%;padding:10px" placeholder="Text or URL"><button class=open onclick="qo.innerHTML='<img class=canvas src=https://api.qrserver.com/v1/create-qr-code/?size=300x300&data='+encodeURIComponent(qt.value)+'>'">Generate</button><div id=qo></div>`)}
+function barcode(){show(`<h2>▥ Barcode Generator</h2><input id=bt style="padding:10px" placeholder="Value"><button class=open onclick="bo.innerHTML='<img class=canvas src=https://bwipjs-api.metafloor.com/?bcid=code128&text='+encodeURIComponent(bt.value)+'&scale=3&includetext>'">Generate</button><div id=bo></div>`)}
+function label(){show(`<h2>🏷️ Photo Name & Date</h2><input id=lf type=file accept=image/*><input id=ln placeholder=Name><input id=ld type=date><button class=open onclick=ml()>Create</button><canvas id=lv class=canvas></canvas>`)}
+async function ml(){let i=await img(lf),x=lv.getContext("2d");lv.width=i.width;lv.height=i.height+70;x.drawImage(i,0,0);x.fillStyle="#fff";x.fillRect(0,i.height,i.width,70);x.fillStyle="#111";x.font="25px Arial";x.fillText(ln.value,15,i.height+30);x.fillText(ld.value,15,i.height+58)}
+function cash(){show(`<h2>🧾 Cash Memo</h2><input id=shop placeholder="Business name"><input id=cust placeholder=Customer><textarea id=it rows=8 style="width:100%" placeholder="Item / Qty / Amount"></textarea><button class=open onclick="let w=open();w.document.write('<h2>'+shop.value+'</h2><p>'+cust.value+'</p><pre>'+it.value+'</pre>');w.print()">Print</button>`)}
+function csv(){show(`<h2>📊 Excel / CSV</h2><textarea id=csvt rows=12 style="width:100%" placeholder="Name,Mobile,Amount"></textarea><button class=open onclick="let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csvt.value],{type:'text/csv'}));a.download='table.csv';a.click()">Download CSV</button>`)}
+
+function feedback(){
+ show(`<div class="feedback-box">
+   <h2>💬 আপনার মতামত</h2>
+   <p style="color:#7b6a5b;font-size:12px">কোন টুল ভালো লেগেছে, কোথাও সমস্যা হচ্ছে কি না, অথবা নতুন কোন টুল চান — জানাতে পারেন।</p>
+   <input id="fbname" placeholder="আপনার নাম (ঐচ্ছিক)">
+   <textarea id="fbmsg" placeholder="আপনার মতামত / পরামর্শ লিখুন..."></textarea>
+   <button class="open" onclick="sendFeedback()">📨 মতামত পাঠান</button>
+ </div>`)
+}
+function sendFeedback(){
+ const name=(document.getElementById("fbname").value||"").trim();
+ const msg=(document.getElementById("fbmsg").value||"").trim();
+ if(!msg){alert("অনুগ্রহ করে আপনার মতামত লিখুন।");return;}
+ const subject=encodeURIComponent("India Tools Website Feedback");
+ const body=encodeURIComponent("Name: "+name+"\\n\\nFeedback:\\n"+msg);
+ window.location.href="mailto:?subject="+subject+"&body="+body;
+}
+
+filters();render();
+</script>
+</body></html>
